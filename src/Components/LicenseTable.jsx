@@ -1,8 +1,12 @@
 import {React,useState,useEffect} from 'react';
+import './LicenseTable.css'
 import Table from './Table'
 
 var data = new Map();  // it store license data in the form of key={license_type} value={array of object} pair
-export function LicenseTable(props) {
+function LicenseTable(props) {
+  var [mappedData,setmappedData] = useState(new Map());
+  var [tableData,setTableData] = useState([])
+  var [selectedKey,setSelectedKey] = useState("")
   
   function pushData(key, value) {
 
@@ -15,27 +19,39 @@ export function LicenseTable(props) {
   }
 
   useEffect(()=>{
-    console.log(1)
     props.data?.Features.forEach(obj => {
       pushData(obj.license.license_type,obj)
     });
-    console.log(1)
-    data = [1,2,3]
-    console.log(data.size,Array.from(data.keys()))
+    setmappedData(data)
   },[])
+
+  useEffect(()=>{
+    setTableData(mappedData.get(Array.from(mappedData.keys())[0]))
+    setSelectedKey(Array.from(mappedData.keys())[0])
+  },[mappedData])
+
+  useEffect(()=>{
+  },[tableData])
+
+function changeTableData(key){
+  console.log(key)
+  setTableData(mappedData.get(key))
+  setSelectedKey(key)
+}
 
   return (
     <div className='LicenseTable'>
       <ul>
-        {
-          data?.map((key) => (
-            <li>key</li>
-          ))
+      {
+          Array.from(mappedData.keys())?.map((key)=>{
+            return (<li className={selectedKey===key ? "selected" : ""} key={key} onClick={()=>changeTableData(key)}>{key}</li>)
+           })
         }
       </ul>
         
+        
         <div>
-          <Table/>
+          <Table data={tableData}/>
         </div>
     </div>
   );

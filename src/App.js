@@ -1,4 +1,5 @@
 import React from 'react';
+import './App.css'
 import LicenseTable from './Components/LicenseTable'
 import licenseData from './data/LicenseData';
 export function App(props) {

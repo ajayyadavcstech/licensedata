@@ -1,0 +1,25 @@
+.LicenseTable ul {
+    list-style-type: none;
+    padding: 0;
+    margin: auto;
+    display: flex;
+  }
+  .LicenseTable{
+    background-color: rgba(76, 76, 94, 0.178)  ;
+    width: 90%;
+    margin:10px auto;
+  }
+  .LicenseTable ul li {
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .LicenseTable ul li.selected {
+    background-color: #28a745;
+    color: #fff;
+  }
+  

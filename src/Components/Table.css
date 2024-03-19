@@ -1,0 +1,28 @@
+.Table {
+    margin: 20px auto;
+  }
+  
+  .Table table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .Table th,
+  .Table td {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  .Table th {
+    background-color: #f2f2f2;
+  }
+  
+  .Table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .Table tr:hover {
+    background-color: #ddd;
+  }
+  
