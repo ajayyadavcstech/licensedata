@@ -1,11 +1,11 @@
-import './App.css';
-
-function App() {
+import React from 'react';
+import LicenseTable from './Components/LicenseTable'
+import licenseData from './data/LicenseData';
+export function App(props) {
   return (
-    <div className="App">
-      App is Running ...
+    <div className='App'>
+       <LicenseTable data={licenseData}/>
     </div>
   );
 }
-
 export default App;
