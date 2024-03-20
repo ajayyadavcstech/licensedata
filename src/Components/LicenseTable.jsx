@@ -9,7 +9,6 @@ function LicenseTable(props) {
   var [selectedKey,setSelectedKey] = useState("")
   
   function pushData(key, value) {
-
     if (data.has(key)) {
       let previousData = data.get(key);
       data.set(key,previousData.concat(value))
@@ -30,11 +29,8 @@ function LicenseTable(props) {
     setSelectedKey(Array.from(mappedData.keys())[0])
   },[mappedData])
 
-  useEffect(()=>{
-  },[tableData])
 
 function changeTableData(key){
-  console.log(key)
   setTableData(mappedData.get(key))
   setSelectedKey(key)
 }
@@ -45,14 +41,13 @@ function changeTableData(key){
       {
           Array.from(mappedData.keys())?.map((key)=>{
             return (<li className={selectedKey===key ? "selected" : ""} key={key} onClick={()=>changeTableData(key)}>{key}</li>)
-           })
-        }
+          })
+      }
       </ul>
         
-        
-        <div>
-          <Table data={tableData}/>
-        </div>
+      <div>
+        <Table data={tableData}/>
+      </div>
     </div>
   );
 }

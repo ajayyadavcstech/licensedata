@@ -5,11 +5,11 @@
     display: flex;
   }
   .LicenseTable{
-    background-color: rgba(76, 76, 94, 0.178)  ;
     width: 90%;
     margin:10px auto;
   }
   .LicenseTable ul li {
+    margin-left: 5px;
     cursor: pointer;
     font-size: 16px;
     padding: 10px 20px;
