@@ -1,7 +1,16 @@
 .Table {
     margin: 20px auto;
+    height : 80vh;
+    overflow: scroll;
+    border-top: 1px solid #ddd;
   }
-  
+  .Table::-webkit-scrollbar {
+    display: none;
+  }
+  thead tr{
+    position: sticky;
+    top:0;
+  }
   .Table table {
     width: 100%;
     border-collapse: collapse;
@@ -10,8 +19,15 @@
   .Table th,
   .Table td {
     padding: 8px;
-    border: 1px solid #ddd;
+    
     text-align: left;
+  }
+  .Table th{
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+  }
+  .Table td{
+    border: 1px solid #ddd;
   }
   
   .Table th {
